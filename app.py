@@ -11,22 +11,16 @@ stock_symbol = st.text_input("Enter Stock Symbol (e.g., AAPL, TSLA)").strip().up
 if st.button("Analyze"):
     if not stock_symbol:
         st.warning("⚠️ Please enter a stock symbol")
-        st.stop()
+        st.stop()  
 
+    # --- Fetch basic stock data ---
     stock = yf.Ticker(stock_symbol)
-
     hist = stock.history(period="1mo")
-    if hist.empty:
-        st.error("❌ Invalid stock symbol or no data available")
-        st.stop()
+    info = stock.info
 
-    fast_info = stock.fast_info
-
-    price = fast_info.get("last_price", "N/A")
-    change = fast_info.get("regular_market_change", 0)
-    change_percent = fast_info.get("regular_market_change_percent", 0)
-
-    st.subheader(f"📊 Analysis for {stock_symbol}")
+    price = info.get("regularMarketPrice", "N/A")
+    change = info.get("regularMarketChange", 0)
+    change_percent = info.get("regularMarketChangePercent", 0)
 
     col1, col2, col3 = st.columns(3)
     col1.metric("Price", f"${price}")
