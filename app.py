@@ -1,6 +1,7 @@
 import streamlit as st
 import yfinance as yf
 from crew import stock_crew
+import re
 
 st.set_page_config(page_title="SmartAlpha AI", page_icon="📊", layout="wide")
 
@@ -37,8 +38,13 @@ if st.button("Analyze"):
     with st.spinner("Running AI agents..."):
         result = stock_crew.kickoff(inputs={"stock": stock_symbol})
 
-    response = result.raw
-    st.markdown(response)
+    response = result.tasks_output[-1].raw
+
+    # Clean formatting
+    response = re.sub(r'\s+', ' ', response)
+    response = re.sub(r'(?<=\b[A-Z])\s(?=[A-Z]\b)', '', response)
+
+    st.write(response)
 
     response_lower = response.lower()
 
