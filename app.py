@@ -1,15 +1,18 @@
 import streamlit as st
 import yfinance as yf
-from crew import stock_crew  # already exists
+from crew import stock_crew
 
-st.set_page_config(page_title="AI Stock Analyzer", layout="wide")
+st.set_page_config(page_title="AI Stock Analyzer", page_icon="📊", layout="wide")
 
 st.title("📊 AI Stock Analysis & Trading Assistant")
 
 # Input
-stock_symbol = st.text_input("Enter Stock Symbol", "AAPL")
+stock_symbol = st.text_input("Enter Stock Symbol").upper()
 
 if st.button("Analyze"):
+    if not stock_symbol:
+        st.warning("⚠️ Please enter a stock symbol")
+        st.stop()  
 
     # --- Fetch basic stock data ---
     stock = yf.Ticker(stock_symbol)
@@ -34,17 +37,17 @@ if st.button("Analyze"):
     # --- AI Agents ---
     st.subheader("🤖 AI Analysis")
 
-    with st.spinner("Running multi-agent system..."):
-        result = stock_crew.kickoff(
-            inputs={"stock": stock_symbol}
-        )
+    with st.spinner("Running AI agents..."):
+        result = stock_crew.kickoff(inputs={"stock": stock_symbol})
 
-    st.write(result)
+    response = result.raw
 
-    # --- Decision Highlight ---
-    if "Buy" in str(result):
+    st.markdown(response)
+
+    # Decision highlight
+    if "Buy" in response:
         st.success("🟢 BUY Recommendation")
-    elif "Sell" in str(result):
+    elif "Sell" in response:
         st.error("🔴 SELL Recommendation")
     else:
         st.warning("🟡 HOLD Recommendation")
