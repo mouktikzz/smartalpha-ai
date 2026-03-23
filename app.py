@@ -2,7 +2,7 @@ import streamlit as st
 import yfinance as yf
 from crew import stock_crew
 
-st.set_page_config(page_title="AI Stock Analyzer", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Smartalpha AI", page_icon="📊", layout="wide")
 
 st.title("📊 AI Stock Analysis & Trading Assistant")
 
