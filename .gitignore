@@ -1,0 +1,82 @@
+# Python
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+
+.venv/
+venv/
+env/
+
+# Environment variables (VERY IMPORTANT)
+
+.env
+
+# Streamlit
+
+.streamlit/
+
+# VS Code
+
+.vscode/
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Logs
+
+*.log
+
+# SQLite / DB files (if any)
+
+*.db
+
+# Build / Distribution
+
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook checkpoints (if you ever use)
+
+.ipynb_checkpoints/
+
+# Temporary files
+
+*.tmp
+*.temp
+
+# Cache
+
+.cache/
+
+# Python packaging
+
+*.egg
+pip-wheel-metadata/
+
+# Coverage reports
+
+htmlcov/
+.coverage
+.coverage.*
+
+# Pytest
+
+.pytest_cache/
+
+# MyPy
+
+.mypy_cache/
+
+# Pyright
+
+.pyright/
+
+# Ruff
+
+.ruff_cache/
