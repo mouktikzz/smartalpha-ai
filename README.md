@@ -34,7 +34,7 @@ An AI-powered stock analysis and trading assistant...
 ## 📂 Project Structure
 
 ```
-CREWAI_MULTI_AGENT/
+smartalpha-ai/
 │
 ├── app.py              # Streamlit UI
 ├── main.py             # CLI entry point
@@ -56,7 +56,7 @@ CREWAI_MULTI_AGENT/
 
 ```
 git clone https://github.com/mouktikzz/AI-Financial-Analyst
-cd AI-Financial-Analyst
+cd smartalpha-ai
 ```
 
 ### 2️⃣ Create virtual environment
