@@ -55,7 +55,7 @@ CREWAI_MULTI_AGENT/
 ### 1️⃣ Clone the repository
 
 ```
-git clone [<your-repo-url>](https://github.com/mouktikzz/AI-Financial-Analyst/)
+git clone https://github.com/mouktikzz/AI-Financial-Analyst
 cd AI-Financial-Analyst
 ```
 
