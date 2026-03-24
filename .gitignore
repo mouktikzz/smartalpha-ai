@@ -21,6 +21,7 @@ env/
 # VS Code
 
 .vscode/
+.devcontainer
 
 # OS files
 
