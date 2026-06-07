@@ -1,9 +1,8 @@
-crewai[litellm]
-crewai-tools
+streamlit
+crewai==0.108.0
+crewai-tools==0.19.0
 python-dotenv
 yfinance
-litellm
-streamlit
 pandas
 numpy
 plotly
