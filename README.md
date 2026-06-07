@@ -4,7 +4,7 @@ An AI-powered stock analysis and trading assistant...
 
 ## 🌐 Live Demo
 
-[![Open App](https://img.shields.io/badge/Launch-App-green?style=for-the-badge)](https://smartalpha.streamlit.app/)
+[![Open App](https://img.shields.io/badge/Launch-App-green?style=for-the-badge)](https://smartalpha-ai.streamlit.app/)
 
 
 ## 🚀 Features
