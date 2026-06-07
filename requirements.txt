@@ -1,6 +1,10 @@
-crewai
+crewai[litellm]
 crewai-tools
 python-dotenv
 yfinance
 litellm
 streamlit
+pandas
+numpy
+plotly
+pydantic
