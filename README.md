@@ -1,155 +1,84 @@
-# 📊 SmartAlpha AI
+# SmartAlpha AI
 
-An AI-powered stock analysis and trading assistant...
+SmartAlpha AI is a multi-agent financial analysis platform that combines artificial intelligence agents (powered by CrewAI), technical analysis, and market data from Yahoo Finance to provide comprehensive stock analysis and investment recommendations.
 
-## 🌐 Live Demo
+## Features
 
-[![Open App](https://img.shields.io/badge/Launch-App-green?style=for-the-badge)](https://smartalpha-ai.streamlit.app/)
+- **Multi-agent analysis** - Four specialized AI agents work together:
+  - **Financial Analyst Agent**: Performs deep fundamental analysis
+  - **News Sentiment Agent**: Analyzes news sentiment and market trends
+  - **Risk Assessment Agent**: Evaluates investment risk factors
+  - **Investment Advisor Agent**: Synthesizes findings into actionable recommendations
+- **Interactive Streamlit UI**: User-friendly interface for searching and analyzing stocks
+- **Technical analysis**: Charting and indicator analysis using Plotly
+- **Real-time market data**: Stock metrics, charts, and news
+- **Risk assessment**: Comprehensive risk scoring
+- **News sentiment analysis**: Extracts sentiment from latest news articles
 
+## Screenshots
 
-## 🚀 Features
+![SmartAlpha AI Demo 1](Demo/demo1.png)
+![SmartAlpha AI Demo 2](Demo/demo2.png)
 
-* 📈 **Live Stock Data** using Yahoo Finance (yfinance)
-* 🤖 **Multi-Agent AI System** (CrewAI)
+## Installation
 
-  * Financial Analyst Agent
-  * Strategic Trader Agent
-* 🧠 **LLM-powered Insights** for market analysis
-* 📊 **Interactive Dashboard** (Streamlit UI)
-* 💡 **Trading Recommendations** (Buy / Sell / Hold)
-* ⚡ Real-time analysis with clean UI
-
----
-
-## 🏗️ Tech Stack
-
-* **Python**
-* **CrewAI** (Multi-agent orchestration)
-* **Streamlit** (Frontend UI)
-* **yfinance** (Stock market data)
-* **LLMs (Groq / OpenAI)**
-
----
-
-## 📂 Project Structure
-
-```
-smartalpha-ai/
-│
-├── app.py              # Streamlit UI
-├── main.py             # CLI entry point
-├── crew.py             # CrewAI orchestration
-│
-├── agents/             # AI Agents
-├── tasks/              # Task definitions
-├── tools/              # Custom tools (stock API)
-│
-├── .env                # API keys (ignored)
-├── requirements.txt
-```
-
----
-
-## ⚙️ Setup Instructions
-
-### 1️⃣ Clone the repository
-
-```
-git clone https://github.com/mouktikzz/AI-Financial-Analyst
+1. Clone the repository:
+```powershell
+git clone https://github.com/your-username/smartalpha-ai.git
 cd smartalpha-ai
 ```
 
-### 2️⃣ Create virtual environment
-
-```
-python -m venv .venv
-.venv\Scripts\activate   # Windows
-```
-
-### 3️⃣ Install dependencies
-
-```
+2. Install dependencies:
+```powershell
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Add environment variables
-
-Create a `.env` file:
-
+3. Set up environment variables (create a `.env` file):
 ```
-GROQ_API_KEY=your_api_key_here
+OPENAI_API_KEY=your-api-key-here
 ```
 
----
+## Usage
 
-## ▶️ Run the Application
-
-### 🔹 Run Streamlit App
-
-```
+### Run the Streamlit app (recommended):
+```powershell
 streamlit run app.py
 ```
 
-### 🔹 Run CLI Version
-
-```
+### Run via CLI:
+```powershell
 python main.py
 ```
 
----
+## Project Structure
 
-## 🧠 How It Works
+```
+smartalpha-ai/
+├── app/
+│   ├── agents/       # AI agents definitions
+│   ├── models/     # Data schemas (Pydantic)
+│   ├── services/  # Market data, news, analysis services
+│   ├── tasks/     # CrewAI task definitions
+│   ├── tools/     # Tools for agents
+│   ├── ui/        # Streamlit UI components
+│   ├── app.py     # Streamlit main application
+│   ├── crew.py    # Crew configuration
+├── app.py         # Streamlit entry point
+├── main.py        # CLI entry point
+├── requirements.txt
+```
 
-1. User enters a stock symbol (e.g., AAPL)
-2. Tool fetches real-time market data using yfinance
-3. **Financial Analyst Agent** analyzes stock performance
-4. **Strategic Trader Agent** evaluates risk and suggests action
-5. Final output: **Buy / Sell / Hold recommendation**
+## Dependencies
 
----
+- **streamlit**: Interactive UI framework
+- **crewai**: Multi-agent orchestration
+- **crewai-tools**: Tools for CrewAI
+- **yfinance**: Yahoo Finance market data
+- **pandas, numpy**: Data manipulation
+- **plotly**: Interactive charts
+- **pydantic**: Data validation
+- **python-dotenv**: Environment variables
 
-## 📸 Demo
+## License
 
-<img width="1807" height="786" alt="image" src="https://github.com/user-attachments/assets/5115be19-1142-4dd4-9224-01074b4a0aa5" />
-<img width="1730" height="575" alt="image" src="https://github.com/user-attachments/assets/abd71d54-84b9-41e2-bac9-25fae6953cbb" />
-<img width="1690" height="234" alt="image" src="https://github.com/user-attachments/assets/74654c09-0279-4684-bc19-c3e3d5f97bca" />
-
-
-
-
----
-
-## 💼 Use Case
-
-* Beginner-friendly AI trading assistant
-* Demonstrates **GenAI + Multi-Agent Systems**
-* Useful for learning financial data analysis
-
----
-
-## 🔒 Security
-
-* API keys stored in `.env`
-* `.env` excluded via `.gitignore`
-
----
-
-## 🌟 Future Improvements
-
-* 📰 News + Sentiment Analysis Agent
-* 📊 Technical Indicators (RSI, Moving Average)
-* 🌐 Deployment on Streamlit Cloud
-* 📉 Advanced trading strategies
-
----
-
-## 👨‍💻 Author
-
-**Mouktik Dasari**
-AI & Data Enthusiast
-
----
-
-## ⭐ If you like this project
-
-Give it a ⭐ on GitHub!
+MIT License
